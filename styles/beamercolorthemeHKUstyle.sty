@@ -4,26 +4,35 @@
 % Theme options and definitions
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 %%%theme options
-\DeclareOptionBeamer{xdred}{\def\beamer@xducolor{xdred}}%缺省默认
-\DeclareOptionBeamer{xdblue}{\def\beamer@xducolor{xdblue}}
-\DeclareOptionBeamer{sidebar}{\def\beamer@xdusidebar{true}}%缺省无
+\DeclareOptionBeamer{red}{\def\beamer@xducolor{red}}% Alternative red color scheme
+\DeclareOptionBeamer{green}{\def\beamer@xducolor{green}}% HKU Green (default)
+\DeclareOptionBeamer{sidebar}{\def\beamer@xdusidebar{true}}% Enable sidebar
 \ProcessOptionsBeamer
 
-\def\beamer@xducolorblue{xdblue}
+\def\beamer@xducolorgreen{green}
 
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 %beamer specific options
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 \mode<presentation>%refers to the first four modes (beamer,handout,second and trans). That is, to all modes except the article mode
 {
-  \ifx\beamer@xducolor\beamer@xducolorblue%
-    \definecolor{beamer@barcolor}{RGB}{38,81,107}% 冷色系辅助色
-    \definecolor{beamer@headercolor}{RGB}{0,65,130}% xdblue
-    \definecolor{beamer@normaltextcolor}{RGB}{0,0,0}% balck
-  \else%
-    \definecolor{beamer@barcolor}{RGB}{180,76,76}% 暖色系辅助色
-    \definecolor{beamer@headercolor}{RGB}{175,33,37}% xdred
+  \ifx\beamer@xducolor\undefined%
+    % Default: HKU Green
+    \definecolor{beamer@barcolor}{RGB}{34,94,82}% HKU Green auxiliary color (lighter shade)
+    \definecolor{beamer@headercolor}{RGB}{2,70,56}% HKU Green (Pantone 3308C, #024638)
     \definecolor{beamer@normaltextcolor}{RGB}{0,0,0}% black
+  \else%
+    \ifx\beamer@xducolor\beamer@xducolorgreen%
+      % Explicit green option
+      \definecolor{beamer@barcolor}{RGB}{34,94,82}% HKU Green auxiliary color (lighter shade)
+      \definecolor{beamer@headercolor}{RGB}{2,70,56}% HKU Green (Pantone 3308C, #024638)
+      \definecolor{beamer@normaltextcolor}{RGB}{0,0,0}% black
+    \else%
+      % Red option
+      \definecolor{beamer@barcolor}{RGB}{180,76,76}% Alternative red auxiliary color
+      \definecolor{beamer@headercolor}{RGB}{175,33,37}% Alternative red color
+      \definecolor{beamer@normaltextcolor}{RGB}{0,0,0}% black
+    \fi%
   \fi%
   
   \setbeamercolor{structure}{fg=beamer@headercolor}
