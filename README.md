@@ -6,6 +6,17 @@ A professional LaTeX Beamer theme for The University of Hong Kong (HKU) presenta
 
 The HKU Beamer Theme provides a clean, professional design for academic and professional presentations. It features HKU branding, customizable color schemes, and various layout options including an optional sidebar navigation. The project is structured for maintainability with modular chapters and clean build management.
 
+## Preview of the demo slides
+
+<img width="1258" alt="image" src="https://github.com/user-attachments/assets/47f9ddb5-a497-417b-ab5f-099cd0fea52c" />
+
+<img width="1258" alt="image" src="https://github.com/user-attachments/assets/1e1d5a09-561d-4bbf-81b4-c430b2cefda8" />
+
+<img width="1258" alt="image" src="https://github.com/user-attachments/assets/665725f2-7596-4833-8889-2d39d10f6d27" />
+
+<img width="500" alt="image" src="https://github.com/user-attachments/assets/5f32dca9-84ae-436c-baa8-143f8d7a3cca" />
+
+
 ## Project Structure
 
 This theme uses a modular structure with separate folders for different components:
