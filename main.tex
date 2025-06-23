@@ -1,0 +1,64 @@
+\documentclass[9pt]{beamer}
+
+% Diagnostic tools for overfull boxes (comment out when not needed)
+% \overfullrule=5pt  % Shows overfull boxes with black bars
+% \usepackage{showframe}  % Shows frame boundaries
+
+% Add tolerance for minor overfull issues
+\hfuzz=1pt  % Suppress overfull hbox warnings for boxes less than 1pt overfull
+
+\usepackage{listings}
+
+% HKU Beamer Theme (from styles folder)
+\usetheme[
+	sidebar, % Show sidebar with navigation
+	footline, % Show footline with page numbers
+	blue, % Color scheme: blue (default) or red
+	english, % Use English labels
+	sectiontoc, % Show section table of contents
+]{HKUstyle} 
+
+\lstset{frame=shadowbox,
+	language=[LaTeX]Tex,
+	keywordstyle=\color{red}\bfseries,
+	commentstyle=\color{gray}
+}
+\mode<presentation>{\usefonttheme{professionalfonts}}
+
+% Presentation Information
+\title[HKU Beamer Theme]{The University of Hong Kong Beamer Theme}
+\subtitle{A Professional Presentation Template}
+\author[Your Name]{Your Name}
+\institute[HKU]{The University of Hong Kong\\
+Department of Your Department}
+\date{\today}
+
+\begin{document}
+
+% Title Page
+{\background
+	\begin{frame}[plain,noframenumbering]
+		\titlepage
+	\end{frame}
+}
+
+% Outline
+\begin{frame}
+	\frametitle{Outline}
+	\tableofcontents
+\end{frame}
+
+% Include all chapters
+\input{chapters/introduction/introduction}
+\input{chapters/theme-options/theme-options}
+\input{chapters/examples/examples}
+\input{chapters/conclusion/conclusion}
+
+% Final page
+{\background
+	\begin{frame}[plain,noframenumbering]
+		\finalpage{\Huge Thank You!}
+	\end{frame}
+}
+
+\end{document} 
